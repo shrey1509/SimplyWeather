@@ -1,9 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit'
 import unitReducer from './slices/unitSlice'
+import currentWeatherReducer from "./slices/currentWeatherSlice"
 import { TypedUseSelectorHook, useSelector } from "react-redux"
 export const store = configureStore({
     reducer:{
-        unitReducer
+        unitReducer,
+        currentWeatherReducer
     }
 })
 
