@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### SimplyWeather
+
+A modern weather app built with Next.js, Tailwind CSS, and Redux for a seamless user experience.
+
+## Features:
+
+Fetch weather data for any location using WeatherAPI
+Clean and responsive UI powered by Tailwind CSS
+State management with Redux for efficient data handling
 
 ## Getting Started
 
-First, run the development server:
+This guide will walk you through setting up and running SimplyWeather on your local machine.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Prerequisites:
+
+Node.js (version 14 or later) and npm (or yarn) installed on your system. You can verify this by running node -v and npm -v (or yarn -v) in your terminal.
+Installation:
+
+Clone this repository:
+
+```
+git clone https://github.com/shrey1509/SimplyWeather.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate to the project directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cd simplyweather
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install dependencies:
 
-## Learn More
+```
+npm install
+``` 
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Development Mode:
 
-## Deploy on Vercel
+Start the development server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+npm run dev
+``` 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This will launch the application at http://localhost:3000 in your browser.
+
+
+
+Build for Production:
+
+Create an optimized production build:
+
+```
+npm run build
+``` 
+
+This will generate a production-ready build in the `.next` directory.
+
+
+
+## Deployment:
+
+You can deploy the built application to various hosting platforms that support Next.js apps. Refer to the documentation of your chosen platform for specific instructions.
+
+## Technology Stack:
+
+- Next.js: A popular React framework for building server-rendered and statically generated web applications.
+- Tailwind CSS: A utility-first CSS framework for rapid and responsive UI development.
+- Redux: A predictable state management library for JavaScript applications.
+- WeatherAPI: A free weather data API for real-time weather information. (Consider adding an API key acquisition section if applicable)
+Contributing
+
+We welcome contributions to SimplyWeather! Feel free to create pull requests with improvements, bug fixes, or new features. Please ensure your code adheres to the project's style guide and formatting conventions.
+

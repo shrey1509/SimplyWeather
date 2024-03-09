@@ -1,11 +1,15 @@
 import {configureStore} from '@reduxjs/toolkit'
 import unitReducer from './slices/unitSlice'
 import currentWeatherReducer from "./slices/currentWeatherSlice"
+import currentHighlightsReducer from "./slices/currentHighlightsSlice"
+import weeklyWeatherReducer from "./slices/weeklyWeatherSlice"
 import { TypedUseSelectorHook, useSelector } from "react-redux"
 export const store = configureStore({
     reducer:{
         unitReducer,
-        currentWeatherReducer
+        currentWeatherReducer,
+        currentHighlightsReducer,
+        weeklyWeatherReducer
     }
 })
 
