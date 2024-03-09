@@ -13,12 +13,12 @@ function HighlightGrid() {
         <div className=" flex flex-col gap-3 h-full">
             <h4>{`Today's`} Highlights</h4>
             <div className=" grid grid-cols-3 gap-3 h-full">
-                <div className=" h-full w-full bg-white rounded-xl flex flex-col justify-between items-center p-4 relative">
+                <div className=" h-full w-full bg-white rounded-xl flex flex-col justify-between items-center p-4 relative  max-h-60">
                     <span className=" w-full text-left text-gray-500 ">UV Index </span>
-                    <div className=" text-5xl absolute bottom-3 left-1/3 ml-4">{currentHighlights.uvIndex.toFixed(0).padStart(2,'0')}</div>
+                    <div className=" text-5xl absolute bottom-3 left-1/2">{currentHighlights.uvIndex.toFixed(0)}</div>
                     <div role="progressbar"  style={{'--value': (currentHighlights.uvIndex/15)*100} as React.CSSProperties}></div>
                 </div>
-                <div className=" h-full w-full bg-white rounded-xl flex flex-col justify-between p-4">
+                <div className=" h-full w-full bg-white rounded-xl flex flex-col justify-between p-4  max-h-60">
                     <span className=" text-gray-500">Wind Status </span>
                     <div className=" text-5xl">{(currentHighlights.windSpeed*3.6).toFixed(0)} <span className=" text-xl">km/h</span></div>
                     <div className=" flex gap-3 items-center">
@@ -28,22 +28,24 @@ function HighlightGrid() {
                         <span>{degToCompass(parseInt(currentHighlights.windDirection))}</span>
                     </div>  
                 </div>
-                <div className=" h-full w-full bg-white rounded-xl flex flex-col justify-between p-4">
+                <div className=" h-full w-full bg-white rounded-xl flex flex-col  p-4 gap-5 max-h-60">
                     <span className=" text-gray-500">Sunrise & Sunset</span>
-                    <div className=" flex  items-center gap-3">
-                        <Image  height={30} width={30} src="/icons/sunrise.svg" alt="sunrise" />
-                        <div className="flex flex-col gap-2">
-                            <span className=" text-base font-medium">{new Date(currentHighlights.sunrise*1000).toLocaleTimeString('en-US',{hour12:true,hour: '2-digit', minute:'2-digit'})}</span>
-                            {/* <small className=" text-gray-500"> -1m 46s</small> */}
+                    <div className="flex flex-col gap-3">
+                        <div className=" flex  items-center gap-5">
+                            <Image  height={30} width={30} src="/icons/sunrise.svg" alt="sunrise" />
+                            <div className="flex flex-col gap-2">
+                                <span className=" text-base font-medium">{new Date(currentHighlights.sunrise*1000).toLocaleTimeString('en-US',{hour12:true,hour: '2-digit', minute:'2-digit'})}</span>
+                                {/* <small className=" text-gray-500"> -1m 46s</small> */}
+                            </div>
                         </div>
-                    </div> 
-                    <div className=" flex items-center gap-3">
-                        <Image className=" rotate-180"  height={30} width={30} src="/icons/sunrise.svg" alt="sunset" />
-                        <div className="flex  flex-col gap-2">
-                            <span className=" text-base font-medium">{new Date(currentHighlights.sunset*1000).toLocaleTimeString('en-US',{hour12:true,hour: '2-digit', minute:'2-digit'})}</span>
-                            {/* <small className=" text-gray-500"> -1m 46s</small> */}
+                        <div className=" flex items-center gap-3">
+                            <Image className=" rotate-180"  height={30} width={30} src="/icons/sunrise.svg" alt="sunset" />
+                            <div className="flex  flex-col gap-2">
+                                <span className=" text-base font-medium">{new Date(currentHighlights.sunset*1000).toLocaleTimeString('en-US',{hour12:true,hour: '2-digit', minute:'2-digit'})}</span>
+                                {/* <small className=" text-gray-500"> -1m 46s</small> */}
+                            </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <div className=" h-full w-full bg-white rounded-xl flex p-4 justify-between items-center">
                     <div className="flex flex-col justify-between h-full">
