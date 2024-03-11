@@ -15,7 +15,7 @@ function HighlightGrid() {
             <div className=" grid grid-cols-3 gap-3 h-full">
                 <div className=" h-full w-full bg-white rounded-xl flex flex-col justify-between items-center p-4 relative  max-h-60">
                     <span className=" w-full text-left text-gray-500 ">UV Index </span>
-                    <div className=" text-5xl absolute bottom-3 left-1/2">{currentHighlights.uvIndex.toFixed(0)}</div>
+                    <div className=" text-5xl absolute bottom-3 left-1/2 center">{currentHighlights.uvIndex.toFixed(0)}</div>
                     <div role="progressbar"  style={{'--value': (currentHighlights.uvIndex/15)*100} as React.CSSProperties}></div>
                 </div>
                 <div className=" h-full w-full bg-white rounded-xl flex flex-col justify-between p-4  max-h-60">
@@ -30,8 +30,8 @@ function HighlightGrid() {
                 </div>
                 <div className=" h-full w-full bg-white rounded-xl flex flex-col  p-4 gap-5 max-h-60">
                     <span className=" text-gray-500">Sunrise & Sunset</span>
-                    <div className="flex flex-col gap-3">
-                        <div className=" flex  items-center gap-5">
+                    <div className="flex flex-col gap-5">
+                        <div className=" flex  items-center gap-2">
                             <Image  height={30} width={30} src="/icons/sunrise.svg" alt="sunrise" />
                             <div className="flex flex-col gap-2">
                                 <span className=" text-base font-medium">{new Date(currentHighlights.sunrise*1000).toLocaleTimeString('en-US',{hour12:true,hour: '2-digit', minute:'2-digit'})}</span>
@@ -53,7 +53,7 @@ function HighlightGrid() {
                         <div className=" text-5xl">{currentHighlights.humidity}<span className=" text-xl">%</span></div>
                         <span className=" font-medium">{currentHighlights.humidity>80? "Very Humid 👍": currentHighlights.humidity>60? "Fairly Humid 👌": currentHighlights.humidity>40? "Moderately Humid 👌": currentHighlights.humidity>20? "Dry 👎":"Very Dry 💀"}</span>
                     </div>
-                    <div className="relative rounded-2xl border px-4 py-2 h-20">
+                    <div className="relative rounded-2xl border px-4  h-24">
                         <div style={{'--value': currentHighlights.humidity+"%"} as React.CSSProperties} className={` meter bg-indigo-700 rounded-full p-2 left-2  absolute `}/>
                     </div>
                 </div>
@@ -70,8 +70,8 @@ function HighlightGrid() {
                         <div className=" text-5xl">{currentHighlights.airQuality}</div>
                         <span className=" font-medium">{currentHighlights.airQuality==1? "Good 👍": currentHighlights.airQuality==2? "Fair 👌": currentHighlights.airQuality==3? "Moderate 👌": currentHighlights.airQuality==4? "Poor 👎": currentHighlights.airQuality==5? "Very Poor 💀":""}</span>
                     </div>
-                    <div className="relative rounded-2xl border px-4 py-2 h-20">
-                        <div style={{'--value': (currentHighlights.airQuality/5)*100+"%"} as React.CSSProperties}  className={` meter bg-indigo-700 rounded-full p-2 left-2  absolute `}/>
+                    <div className="relative rounded-2xl border px-4  h-24">
+                        <div style={{'--value': (currentHighlights.airQuality/5)*80+"%"} as React.CSSProperties}  className={` meter bg-indigo-700 rounded-full p-2 left-2  absolute `}/>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ const unsplashKey = "x-lULc5fr9SgzqWB9wbnr9Fos2g2jr6CG5y_HNe7N7g"
 
 const getAddressByCode = async(latitude:number,longitude:number) => {
   try {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
+    const response = await fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
     const data = await response.json();
     return data[0].name;
   } catch (error) {
@@ -17,7 +17,7 @@ const getAddressByCode = async(latitude:number,longitude:number) => {
 
 export const getAddressByName = async(name:string) => {
     try {
-      const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${name}&appid=${apiKey}`);
+      const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${name}&appid=${apiKey}`);
       const data = await response.json();
       if(data.length>0){
           const weatherData = await getWeather(data[0].lat,data[0].lon)
@@ -59,7 +59,7 @@ export const getWeatherIconByName = (name:string) => {
 
 const getAQI = async(latitude:number,longitude:number) => {
     try {
-      const response = await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
       const data = await response.json();
       return data.list[0].main.aqi
     } catch (error) {

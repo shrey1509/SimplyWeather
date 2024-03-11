@@ -14,7 +14,7 @@ type InitialState = {
 const initialState = {
     value:{
         location:"Pune, Maharashtra",
-        temperature:24,
+        temperature:260,
         status:"Sunny",
         humidity:25,
         image:""
