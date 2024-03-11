@@ -37,11 +37,11 @@ export default function Home() {
   }, [getData]);
   return (
     <main className="flex h-screen w-full bg-gray-100 text-black text-sm">
-      <div className=" w-1/3 bg-white gap-6 py-16 px-8">
+      <div className=" w-1/3 bg-white gap-6 py-8 2xl:py-16 px-8">
         <Searchbar/>
         <Sidebar/>
       </div>
-      <div className=" w-full flex flex-col gap-12 p-16">
+      <div className=" w-full flex flex-col gap-8 2xl:gap-12 p-8 2xl:p-16">
         <MainHeader/>
         <WeeklyGrid/>
         <HighlightGrid/>

@@ -8,7 +8,7 @@ function Sidebar() {
 
     return (
         <div className=" flex flex-col gap-4 h-full pb-16 font-medium">
-            <Image src={getWeatherIconByName(currentWeather.status)} height={240} width={240} alt="current-weather"/>
+            <Image className=" sidebar-img" src={getWeatherIconByName(currentWeather.status)} height={240} width={240} alt="current-weather"/>
             <div className="flex">
                 <h1 className=" font-normal text-6xl">{unit?kelvinToFahrenheit(currentWeather.temperature):kelvinToCelsius(currentWeather.temperature)}</h1>
                 <span className=" text-3xl">{unit?"F":"C"}</span>

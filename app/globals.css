@@ -63,3 +63,10 @@
 .center{
   transform: translate(-50%, 0);
 }
+
+@media screen and (max-width:1600px) {
+  .sidebar-img{
+    height: 11.25rem;
+    width: 11.25rem;
+  }
+}
